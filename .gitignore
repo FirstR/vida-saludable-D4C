@@ -17,3 +17,6 @@ src/main/resources/hibernateContext.xml
 src/main/resources/applicationContext.xml
 src/main/resources/hibernateContext.xml
 src/main/resources/spring-servlet.xml
+src/main/resources/applicationContext.xml
+src/main/resources/hibernateContext.xml
+src/main/resources/spring-servlet.xml
