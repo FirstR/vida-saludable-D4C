@@ -22,7 +22,7 @@ public class ControladorEjercicioPersonal {
         this.servicio = servicio;
     }
 	
-	@RequestMapping("/infoEjercicio")
+	@RequestMapping("infoEjercicio")
     public ModelAndView irAEjercicio() {
 		//Vamos directamente a la vista infoEjercicio
         ModelMap modelo = new ModelMap();
