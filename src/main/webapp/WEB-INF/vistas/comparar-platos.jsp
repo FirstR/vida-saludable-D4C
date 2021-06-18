@@ -5,14 +5,9 @@
 <html>
 	<head>
 	
-	
-	<!-- Bootstrap core CSS -->
-	    <link href="/proyecto-limpio-spring/css/bootstrap.min.css" rel="stylesheet" >
-	    <!-- Bootstrap theme -->
-	    <link href="/proyecto-limpio-spring/css/bootstrap-theme.min.css" rel="stylesheet">
-	    
-	 <link rel="stylesheet" href="/proyecto-limpio-spring/css/animate.css">
-	
+	<link href="/proyecto-limpio-spring/css/bootstrap.min.css" rel="stylesheet" >
+	<link href="/proyecto-limpio-spring/css/bootstrap-theme.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="/proyecto-limpio-spring/css/animate.css">
 	<link rel="stylesheet" href="/proyecto-limpio-spring/css/owl.carousel.min.css">
 	<link rel="stylesheet" href="/proyecto-limpio-spring/css/owl.theme.default.min.css">
 	<link rel="stylesheet" href="/proyecto-limpio-spring/css/magnific-popup.css">
@@ -24,7 +19,21 @@
 	<link rel="stylesheet" href="/proyecto-limpio-spring/css/flaticon.css">
 	<link rel="stylesheet" href="/proyecto-limpio-spring/css/style.css?v5.3">
 	<title>Vida Saludable</title>
+	<style>
+	.imagenPlato{
+	width: 190px;
+    height: 156px;
+    margin-bottom: 1em;
+	}
 	
+	.mb-4, .my-4 {
+    height: 52px;
+    }
+    
+    .ftco-animate { 
+    height: 350px;
+    }
+	</style>
 	</head>
 	<body>
 	
@@ -65,11 +74,12 @@
 		<section class="ftco-section bg-light">
 		<div class="container">
 			<div class="row justify-content-center mb-5 pb-2">
-				<div class="col-md-7 text-center heading-section ftco-animate">
+				<div class="col-md-7 text-center heading-section ">
  					<h2 class="mb-4">Listado de platos</h2>
 				</div>
 			</div>	
 			<div class="row">
+			  <% int idUsuario = 1; %>  
 			  <div class="col-md-12">
 			  
 			 <c:if test="${not empty msj}">
@@ -77,24 +87,24 @@
                     <p>${msj}</p>
                 </div>
             </c:if>	
-         <% int idUsuario = 1; %>       
- <div class="col-md-8">     
- <form action="/proyecto-limpio-spring/buscar-platos/<%= idUsuario %>">
-   <div class="col-md-6">
- <input type="text" name="nombre" class="form-control">
- </div>
- 
-  <div class="col-md-6">
- <input type="submit" value="Buscar" class="btn btn-success"> 
-  </div>
- </form>
- </div>
-  <div class="col-md-4">
-
-  <a href="/proyecto-limpio-spring/ver-resultado-comparacion/<%= idUsuario %>"  class="btn btn-info"> Ver Comparacion</a>
- </div>
-
- </div>
+     
+			 <div class="col-md-8">     
+			 <form action="/proyecto-limpio-spring/buscar-platos/<%= idUsuario %>">
+			   <div class="col-md-6">
+			 <input type="text" name="nombre" class="form-control">
+			 </div>
+			 
+			  <div class="col-md-6">
+			 <input type="submit" value="Buscar" class="btn btn-success"> 
+			  </div>
+			 </form>
+			 </div>
+			  <div class="col-md-4">
+			
+			  <a href="/proyecto-limpio-spring/ver-resultado-comparacion/<%= idUsuario %>"  class="btn btn-info"> Ver Comparacion</a>
+			 </div>
+			
+			 </div>
  				${error}
  
  
@@ -104,12 +114,13 @@
 <section class="ftco-section ftco-no-pt ftco-no-pb" style="    margin-bottom: 1em;">
  <div class="container">
   <div class="row d-flex">
-<form action="agregar-a-la-comparacion/<%= idUsuario %>">
+<form action="/proyecto-limpio-spring/agregar-a-la-comparacion/<%= idUsuario %>">
 
 
  <c:forEach var="platos" items="${platos}">
 
- <% int bandera = 0; %>
+<c:set  value="0" var="bandera"  />
+
    <div class="col-md-3 ftco-animate makereservation p-4 p-md-5">
      <div class="heading-section ftco-animate mb-5">
 
@@ -121,7 +132,8 @@
   
   <c:if test="${platos.id_plato==platosAgregados.plato.id_plato}">
   <p><a href="/proyecto-limpio-spring/quitar-plato/${platosAgregados.id_comparar}" class="btn btn-primary">Quitar</a></p>
-  <%  bandera = 1; %>
+
+<c:set  value="1" var="bandera"  />
   </c:if>
   
   </c:forEach> 
@@ -135,7 +147,7 @@
    
 </c:forEach> 
 			 <c:if test="${not empty platos}">
-			 <div class="col-md-12">
+			 <div class="col-md-12" style="    text-align: center;    margin-top: 2em;">
 			 <input type="submit" value="Agregar al Comparador" class="btn btn-primary"> 
 			 </div>
 			 </c:if>	

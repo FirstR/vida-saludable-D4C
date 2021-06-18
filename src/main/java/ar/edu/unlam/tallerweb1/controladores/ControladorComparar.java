@@ -101,7 +101,7 @@ public class ControladorComparar{
 		 
 			 model.put("platos", resultadoBusqueda);
 // 			 model.put("msj", "Platos Agregados Correctamente");
- 			 return new ModelAndView("comparar-platos",model);
+ 			 return new ModelAndView("resultado-comparacion",model);
 			 //platos vacios
 	 }
 	 catch(IngredientesVacios e){
