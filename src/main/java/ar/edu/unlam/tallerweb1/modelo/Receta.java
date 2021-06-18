@@ -66,7 +66,7 @@ public class Receta {
 	public void setPrincipal(String principal) {
 		this.principal = principal;
 	}
-
+ 
  
  
 	public Plato getPlato() {

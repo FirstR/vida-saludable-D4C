@@ -21,8 +21,8 @@ public class ServicioPlatoImpl implements ServicioPlato {
 
 	@Override
 	public List<Plato> buscarPlato(String nombre) {
-		// TODO Auto-generated method stub
-		return null;
+ 		return repositorioPlato.buscarPlatoPorNombre(nombre);
+
 	}
 
 	@Override
