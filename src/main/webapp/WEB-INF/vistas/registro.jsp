@@ -6,22 +6,19 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap" rel="stylesheet">
+	<link href="/proyecto-limpio-spring/css/bootstrap.min.css" rel="stylesheet" >
+	<link href="/proyecto-limpio-spring/css/bootstrap-theme.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="/proyecto-limpio-spring/css/animate.css">
+	<link rel="stylesheet" href="/proyecto-limpio-spring/css/owl.carousel.min.css">
+	<link rel="stylesheet" href="/proyecto-limpio-spring/css/owl.theme.default.min.css">
+	<link rel="stylesheet" href="/proyecto-limpio-spring/css/magnific-popup.css">
 
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="/proyecto-limpio-spring/css/bootstrap-datepicker.css">
+	<link rel="stylesheet" href="/proyecto-limpio-spring/css/jquery.timepicker.css">
 
-        <link rel="stylesheet" href="css/animate.css">
-
-        <link rel="stylesheet" href="css/owl.carousel.min.css">
-        <link rel="stylesheet" href="css/owl.theme.default.min.css">
-        <link rel="stylesheet" href="css/magnific-popup.css">
-
-        <link rel="stylesheet" href="css/bootstrap-datepicker.css">
-        <link rel="stylesheet" href="css/jquery.timepicker.css">
-
-        <link rel="stylesheet" href="css/flaticon.css">
-        <link rel="stylesheet" href="css/style.css">
+	
+	<link rel="stylesheet" href="/proyecto-limpio-spring/css/flaticon.css">
+	<link rel="stylesheet" href="/proyecto-limpio-spring/css/style.css?v5.3">
     </head>
 
     <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
@@ -35,6 +32,19 @@
             </div>
         </div>
     </nav>
+    
+    	<section class="hero-wrap hero-wrap-2" style="background-image: url('images/bg_5.jpg');" data-stellar-background-ratio="0.5">
+		<div class="overlay"></div>
+		<div class="container">
+			<div class="row no-gutters slider-text justify-content-center" style="    margin-top: 9em;">
+				<div class="col-md-9  text-center mb-5">
+					<h1 class="mb-2 bread"> Vida Saludable</h1>
+					<p class="breadcrumbs"><span class="mr-2"><a href="">Registro </a></span>  </p>
+				</div>
+			</div>
+		</div>
+	</section>
+	
 
     <body>
     <div class = "container">
@@ -60,5 +70,23 @@
         </div>
     </div>
 
+
+			<script src="/proyecto-limpio-spring/js/jquery.min.js"></script>
+			<script src="/proyecto-limpio-spring/js/jquery-migrate-3.0.1.min.js"></script>
+			<script src="/proyecto-limpio-spring/js/popper.min.js"></script>
+			<script src="/proyecto-limpio-spring/js/bootstrap.min.js"></script>
+			<script src="/proyecto-limpio-spring/js/jquery.easing.1.3.js"></script>
+			<script src="/proyecto-limpio-spring/js/jquery.waypoints.min.js"></script>
+			<script src="/proyecto-limpio-spring/js/jquery.stellar.min.js"></script>
+			<script src="/proyecto-limpio-spring/js/owl.carousel.min.js"></script>
+			<script src="/proyecto-limpio-spring/js/jquery.magnific-popup.min.js"></script>
+			<script src="/proyecto-limpio-spring/js/jquery.animateNumber.min.js"></script>
+			<script src="/proyecto-limpio-spring/js/bootstrap-datepicker.js"></script>
+			<script src="/proyecto-limpio-spring/js/jquery.timepicker.min.js"></script>
+			<script src="/proyecto-limpio-spring/js/scrollax.min.js"></script>
+			<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+			<script src="/proyecto-limpio-spring/js/google-map.js"></script>
+			<script src="/proyecto-limpio-spring/js/main.js"></script>
+			
     </body>
 </html>

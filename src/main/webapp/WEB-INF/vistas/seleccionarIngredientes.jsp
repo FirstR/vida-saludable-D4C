@@ -6,23 +6,19 @@
 	<head>
 	
 	
-	<!-- Bootstrap core CSS -->
-	    <link href="css/bootstrap.min.css" rel="stylesheet" >
-	    <!-- Bootstrap theme -->
-	    <link href="css/bootstrap-theme.min.css" rel="stylesheet">
-	    
-	 <link rel="stylesheet" href="css/animate.css">
-	
-	<link rel="stylesheet" href="css/owl.carousel.min.css">
-	<link rel="stylesheet" href="css/owl.theme.default.min.css">
-	<link rel="stylesheet" href="css/magnific-popup.css">
+	<link href="/proyecto-limpio-spring/css/bootstrap.min.css" rel="stylesheet" >
+	<link href="/proyecto-limpio-spring/css/bootstrap-theme.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="/proyecto-limpio-spring/css/animate.css">
+	<link rel="stylesheet" href="/proyecto-limpio-spring/css/owl.carousel.min.css">
+	<link rel="stylesheet" href="/proyecto-limpio-spring/css/owl.theme.default.min.css">
+	<link rel="stylesheet" href="/proyecto-limpio-spring/css/magnific-popup.css">
 
-	<link rel="stylesheet" href="css/bootstrap-datepicker.css">
-	<link rel="stylesheet" href="css/jquery.timepicker.css">
+	<link rel="stylesheet" href="/proyecto-limpio-spring/css/bootstrap-datepicker.css">
+	<link rel="stylesheet" href="/proyecto-limpio-spring/css/jquery.timepicker.css">
 
 	
-	<link rel="stylesheet" href="css/flaticon.css">
-	<link rel="stylesheet" href="css/style.css?v5.3">
+	<link rel="stylesheet" href="/proyecto-limpio-spring/css/flaticon.css">
+	<link rel="stylesheet" href="/proyecto-limpio-spring/css/style.css?v5.3">
 	<title>Vida Saludable</title>
 		 
  <script type='text/javascript'>
