@@ -41,11 +41,11 @@ public class ControladorRegistrarse {
         } catch (ClavesNoCoinciden e){
             return registroFallido(model,"Las claves no coinciden");
         } catch (EmailInvalido e){
-            return registroFallido(model, "El email es inv√°lido");
+            return registroFallido(model, "El email es inv·lido");
         } catch (ClaveInvalida e){
-        return registroFallido(model, "El clave es inv√°lida");
+        return registroFallido(model, "El clave es inv·lida");
         } catch (UsuarioExistente e){
-            return registroFallido(model, "Ya se registr√≥ un usuario con este email");
+            return registroFallido(model, "Ya se registrÛ un usuario con este email");
         }
         return registroExitoso(model);
     }
