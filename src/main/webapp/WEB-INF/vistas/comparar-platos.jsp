@@ -57,7 +57,7 @@
 	</nav>
 	<!-- END nav -->
 	
-	<section class="hero-wrap hero-wrap-2" style="background-image: url('images/bg_5.jpg');" data-stellar-background-ratio="0.5">
+	<section class="hero-wrap hero-wrap-2" style="background-image: url('/proyecto-limpio-spring/images/bg_5.jpg');" data-stellar-background-ratio="0.5">
 		<div class="overlay"></div>
 		<div class="container">
 			<div class="row no-gutters slider-text justify-content-center" style="    margin-top: 9em;">
@@ -79,8 +79,7 @@
 				</div>
 			</div>	
 			<div class="row">
-			  <% int idUsuario = 1; %>  
-			  <div class="col-md-12">
+ 			  <div class="col-md-12">
 			  
 			 <c:if test="${not empty msj}">
                 <div class="alert alert-warning" role="alert">
@@ -89,7 +88,7 @@
             </c:if>	
      
 			 <div class="col-md-8">     
-			 <form action="/proyecto-limpio-spring/buscar-platos/<%= idUsuario %>">
+			 <form action="/proyecto-limpio-spring/buscar-platos/<%= session.getAttribute("idUsuario")  %>">
 			   <div class="col-md-6">
 			 <input type="text" name="nombre" class="form-control">
 			 </div>
@@ -101,7 +100,7 @@
 			 </div>
 			  <div class="col-md-4">
 			
-			  <a href="/proyecto-limpio-spring/ver-resultado-comparacion/<%= idUsuario %>"  class="btn btn-info"> Ver Comparacion</a>
+			  <a href="/proyecto-limpio-spring/ver-resultado-comparacion/<%= session.getAttribute("idUsuario")  %>"  class="btn btn-info"> Ver Comparacion</a>
 			 </div>
 			
 			 </div>
@@ -114,7 +113,7 @@
 <section class="ftco-section ftco-no-pt ftco-no-pb" style="    margin-bottom: 1em;">
  <div class="container">
   <div class="row d-flex">
-<form action="/proyecto-limpio-spring/agregar-a-la-comparacion/<%= idUsuario %>">
+<form action="/proyecto-limpio-spring/agregar-a-la-comparacion/<%= session.getAttribute("idUsuario")  %>">
 
 
  <c:forEach var="platos" items="${platos}">

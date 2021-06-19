@@ -76,8 +76,7 @@ public class ControladorComparar{
     		ModelMap model = new ModelMap();
  
 			 model.put("msj", "Platos Agregados Correctamente");
-			// return new ModelAndView("resultado-comparacion",model);
-			 return new ModelAndView("comparar-platos",model);
+ 			 return new ModelAndView("comparar-platos",model);
 			 //platos vacios para agregar hacer expection
 			 }
 			 catch(IngredientesVacios e){
@@ -100,9 +99,8 @@ public class ControladorComparar{
 		 ModelMap model = new ModelMap();
 		 
 			 model.put("platos", resultadoBusqueda);
-// 			 model.put("msj", "Platos Agregados Correctamente");
- 			 return new ModelAndView("resultado-comparacion",model);
-			 //platos vacios
+  			 return new ModelAndView("resultado-comparacion",model);
+			 //platos vacios para agregar hacer expection
 	 }
 	 catch(IngredientesVacios e){
 		 ModelMap model = new ModelMap();

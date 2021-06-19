@@ -2,20 +2,27 @@ package ar.edu.unlam.tallerweb1.controladores;
 
 import ar.edu.unlam.tallerweb1.modelo.DatosIMC;
 import ar.edu.unlam.tallerweb1.servicios.ServicioIMCImpl;
+import ar.edu.unlam.tallerweb1.servicios.ServicioIngrediente;
+import ar.edu.unlam.tallerweb1.servicios.ServicioPlato;
+import ar.edu.unlam.tallerweb1.servicios.ServicioReceta;
+
 import org.springframework.stereotype.Controller;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 import org.springframework.web.servlet.ModelAndView;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @Controller
 public class ControladorIMCTest {
 
-    private ControladorIMC controladorImc = new ControladorIMC(new ServicioIMCImpl());
+	
+
+    private ModelAndView mav; 
+
+    private ControladorIMC controladorImc ;
     private Double altura;
     private Double peso;
     private String motivo;
-    private ModelAndView mav;
-    private ServicioIMCImpl servicioIMC = new ServicioIMCImpl();
+     private ServicioIMCImpl servicioIMC ;
 
     @Test
     public void siLaAlturaEsInvalidaNoTendriaQuePoderCalcular(){
@@ -43,8 +50,8 @@ public class ControladorIMCTest {
     }
 
     private void cuandoCalculoImc(DatosIMC datos) {
-
-        mav = controladorImc.calcularImcCompleto(datos);
+//CAMBIAR 1 POR IDuSUARIO
+        mav = controladorImc.calcularImcCompleto(1,datos);
     }
 
     private void dadoQueLaAlturaEsInvalida (Double altura){

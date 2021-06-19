@@ -57,7 +57,7 @@ float: right;
 	</nav>
 	<!-- END nav -->
 	
-	<section class="hero-wrap hero-wrap-2" style="background-image: url('images/bg_5.jpg');" data-stellar-background-ratio="0.5">
+	<section class="hero-wrap hero-wrap-2" style="background-image: url('/proyecto-limpio-spring/images/bg_5.jpg');" data-stellar-background-ratio="0.5">
 		<div class="overlay"></div>
 		<div class="container">
 			<div class="row no-gutters slider-text justify-content-center" style="    margin-top: 9em;">
@@ -130,7 +130,7 @@ float: right;
   					 					<h1 class="mb-4">Buscar Más platos</h1>
  					
  					
- <% int idUsuario = 1; %>  
+ 
 			  <div class="col-md-12">
 			  
 			 <c:if test="${not empty msj}">
@@ -140,7 +140,7 @@ float: right;
             </c:if>	
      
 			 <div class="col-md-8">     
-			 <form action="/proyecto-limpio-spring/buscar-platos/<%= idUsuario %>">
+			 <form action="/proyecto-limpio-spring/buscar-platos/<%= session.getAttribute("idUsuario")  %>">
 			   <div class="col-md-6">
 			 <input type="text" name="nombre" class="form-control">
 			 </div>
@@ -152,7 +152,7 @@ float: right;
 			 </div>
 			  <div class="col-md-4">
 			
-			  <a href="/proyecto-limpio-spring/ver-resultado-comparacion/<%= idUsuario %>"  class="btn btn-info"> Ver Comparacion</a>
+			  <a href="/proyecto-limpio-spring/ver-resultado-comparacion/<%= session.getAttribute("idUsuario")  %>"  class="btn btn-info"> Ver Comparacion</a>
 			 </div>
 			
 			 </div>

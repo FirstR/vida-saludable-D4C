@@ -2,6 +2,7 @@ package ar.edu.unlam.tallerweb1.servicios;
 
 import ar.edu.unlam.tallerweb1.modelo.DatosIMC;
 import ar.edu.unlam.tallerweb1.modelo.Usuario;
+import ar.edu.unlam.tallerweb1.repositorios.RepositorioReceta;
 import ar.edu.unlam.tallerweb1.repositorios.RepositorioUsuario;
 import ar.edu.unlam.tallerweb1.repositorios.RepositorioUsuarioImpl;
 import org.hibernate.SessionFactory;
@@ -14,15 +15,18 @@ import java.text.DecimalFormat;
 
 @Service("ServicioCalcularIMC")
 @Transactional
-
 public class ServicioIMCImpl implements ServicioCalcularIMC {
+ 
+    private RepositorioUsuario repositorioUsuario;
 
-    private SessionFactory sessionFactory;
-    private RepositorioUsuario repositorioUsuario = new RepositorioUsuarioImpl(sessionFactory);
-    HttpServletRequest request;
+    @Autowired
+    public ServicioIMCImpl(RepositorioUsuario repositorioUsuario) {
+    this.repositorioUsuario = repositorioUsuario;	
+    }
+ 
 
     @Override
-    public DatosIMC calcularImcCompleto(Double altura, Double peso) {
+    public DatosIMC calcularImcCompleto(Double altura, Double peso, Long idUsuario) {
 
         Double IMC;
         String compCorporal = "";
@@ -47,9 +51,9 @@ public class ServicioIMCImpl implements ServicioCalcularIMC {
         double IMCShort = Math.round(IMC);
         DatosIMC datos = new DatosIMC(altura,peso,IMCShort,compCorporal);
 
-        /*String email = (String) request.getSession().getAttribute("usuarioEmail");
-        Usuario usuario = repositorioUsuario.buscarPorEmail(email);
-        repositorioUsuario.guardarDatosIMC(usuario, datos);*/
+  
+        Usuario usuario = repositorioUsuario.buscarPorId(idUsuario);
+        repositorioUsuario.guardarDatosIMC(usuario, datos);
 
         return datos;
     }

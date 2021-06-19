@@ -52,7 +52,7 @@ public class ControladorLogin {
 		Usuario usuarioBuscado = servicioLogin.consultarUsuario(usuario);
 		request.getSession().setAttribute("usuarioEmail", usuarioBuscado.getEmail());
 		if (usuarioBuscado != null) {
-			
+			request.getSession().setAttribute("idUsuario", usuarioBuscado.getId());			
 			request.getSession().setAttribute("ROL", usuarioBuscado.getRol());
 			return new ModelAndView("redirect:/index");
 		} else {
