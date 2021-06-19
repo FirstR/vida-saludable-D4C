@@ -100,12 +100,16 @@
 			</style>
 			<div class="row">
 			    <div class="col-md-2"></div>
-			    
-				
+	<c:set  value='<%= session.getAttribute("idUsuario") %>' var="idUsuario"  />
+ 
+ 
+  <c:if test="${empty idUsuario}">
+   <c:set  value="0" var="idUsuario"  />
+   </c:if>	
 				<div class="col-md-4">
 				
 				<div class="img" style="background-image: url(images/1.jpg);height: 300px; margin-bottom: 1em;">
-			    <h3 class="h3Menu"><a href="calcular/<%= session.getAttribute("idUsuario") %>" class="colorBlanco"> Indice Masa Moscular</a></h3>
+			    <h3 class="h3Menu"><a href="calcular/${idUsuario}" class="colorBlanco"> Indice Masa Moscular</a></h3>
 			    </div>
 				</div>	
 				
@@ -154,7 +158,7 @@
 		
 				<div class="col-md-4">
 				<div class="img" style="background-image: url(images/lunch-4.jpg);height: 300px;    margin-bottom: 1em;">
-			    <h3 class="h3Menu"><a href="comparar-platos/<%= session.getAttribute("idUsuario") %>"  class="colorBlanco"> Comparar Platos</a></h3>
+			    <h3 class="h3Menu"><a href="comparar-platos/${idUsuario}"  class="colorBlanco"> Comparar Platos</a></h3>
 				</div>	
 				</div>
 				 

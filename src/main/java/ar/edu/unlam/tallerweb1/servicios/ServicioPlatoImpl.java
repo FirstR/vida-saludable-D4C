@@ -27,8 +27,14 @@ public class ServicioPlatoImpl implements ServicioPlato {
 
 	@Override
 	public List<Plato> damePlatos() {
-		// TODO Auto-generated method stub
- 		return repositorioPlato.damePlatos();
+		List<Plato> listadoPlatos=	repositorioPlato.damePlatos();
+		 
+		if(listadoPlatos.size()==0) {
+			throw new PlatoVacio();
+		}
+		
+ 		return listadoPlatos;
+ 		 
 	}
 
 	@Override

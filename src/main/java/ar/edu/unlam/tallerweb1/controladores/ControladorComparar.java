@@ -1,8 +1,10 @@
 package ar.edu.unlam.tallerweb1.controladores;
 
-import ar.edu.unlam.tallerweb1.servicios.ServicioPlato;   
+import ar.edu.unlam.tallerweb1.servicios.ServicioPlato;
+import ar.edu.unlam.tallerweb1.servicios.UsuarioInvalido;
 import ar.edu.unlam.tallerweb1.servicios.ServicioCompararPlato;   
 import ar.edu.unlam.tallerweb1.servicios.IngredientesVacios;
+import ar.edu.unlam.tallerweb1.servicios.PlatoVacio;
 import ar.edu.unlam.tallerweb1.servicios.ServicioLogin;
 import ar.edu.unlam.tallerweb1.modelo.CompararPlato;
 import ar.edu.unlam.tallerweb1.modelo.Ingrediente;
@@ -21,6 +23,7 @@ import org.springframework.web.servlet.ModelAndView;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -40,16 +43,29 @@ public class ControladorComparar{
  
 	
 	
-    @RequestMapping(path = "comparar-platos/{idUsuario}" , method = RequestMethod.GET)
+    @RequestMapping(value = {"comparar-platos/{idUsuario}" }  , method = RequestMethod.GET)
 	public ModelAndView buscoPlato(@PathVariable Integer idUsuario) {
         ModelMap model = new ModelMap();
-		List<Plato>	platos = servicioPlato.damePlatos();
-		List<CompararPlato>	platosAgregados = servicioCompararPlato.damePlatos((long)idUsuario);
+       	try {
 
-		
-		model.put("platosAgregados", platosAgregados);
- 		model.put("platos", platos);
+       	 if (idUsuario!=0) { 
+	 		List<Plato>	platos = servicioPlato.damePlatos();
+			List<CompararPlato>	platosAgregados = servicioCompararPlato.damePlatos((long)idUsuario); 
+			model.put("platosAgregados", platosAgregados);
+	 		model.put("platos", platos);
+       	 } else {
+       		throw new UsuarioInvalido();
+       	 }   
+     	   
+       	   
+       	}catch(UsuarioInvalido e){
+			 return new ModelAndView("redirect:/login");
+       	}catch(PlatoVacio e){
+            model.put("msj","El codigo del plato no es correcto.");         
+       	}
+       	
 		return new ModelAndView("comparar-platos",model); 
+
 	 
     }
     
