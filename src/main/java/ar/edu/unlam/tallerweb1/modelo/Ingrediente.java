@@ -53,7 +53,7 @@ public class Ingrediente {
     )
     private Set<Plato> platos;
     
-	  
+	   
 	  
 	  
 	public Set<Plato> getPlatos() {

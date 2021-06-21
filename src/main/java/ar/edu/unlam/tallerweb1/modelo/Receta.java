@@ -27,17 +27,11 @@ public class Receta {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id_receta;
-	
-//	@ManyToOne(optional =false , cascade = CascadeType.ALL, fetch=FetchType.EAGER)
-//	@JoinColumn(name="id_plato")
+ 
     @ManyToOne
     @JoinColumn(name = "id_plato")
 	private Plato plato; 
-	
-	//FetchType. ES EL QUE CARGA O NO LA OTRA ENTIDAD , mappedBy="receta"
-//	@OneToMany(fetch = FetchType.EAGER, mappedBy = "receta", cascade = CascadeType.ALL)
- //   @Column(name = "id_ingrediente", insertable=false, updatable=false)
-	
+   
     @ManyToOne
     @JoinColumn(name = "id_ingrediente")
  	private Ingrediente ingrediente; 
@@ -66,7 +60,7 @@ public class Receta {
 	public void setPrincipal(String principal) {
 		this.principal = principal;
 	}
-
+ 
  
  
 	public Plato getPlato() {

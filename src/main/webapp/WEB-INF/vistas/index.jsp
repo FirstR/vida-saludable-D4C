@@ -94,25 +94,29 @@
     position: absolute;
         width: 92%;
     }
+    .colorBlanco{
+    color:white;
+    }
 			</style>
 			<div class="row">
 			    <div class="col-md-2"></div>
 			    
-		
+				
 				<div class="col-md-4">
-				<a href=""> 
-				<div class="img" style="background-image: url(images/1.jpg);height: 300px;    margin-bottom: 1em;">
-			    <h3 class="h3Menu">Indice Masa Moscular</h3>
-			    </a>
+				
+				<div class="img" style="background-image: url(images/1.jpg);height: 300px; margin-bottom: 1em;">
+			    <h3 class="h3Menu"><a href="calcular/<%= session.getAttribute("idUsuario") %>" class="colorBlanco"> Indice Masa Moscular</a></h3>
+			    </div>
 				</div>	
-				</div>
+				
+				 
 				
 
 				<div class="col-md-4">
-				<a href="seleccionar-ingrediente"> 
+				
 				<div class="img" style="background-image: url(images/2.jpg);height: 300px;    margin-bottom: 1em;">
-			    <h3 class="h3Menu">¿Qué puedo cocinar?</h3>
-			    </a>
+			    <h3 class="h3Menu"><a href="seleccionar-ingrediente" class="colorBlanco"> ¿Qué puedo cocinar?</a></h3>
+			 
 				</div>	
 				</div>
 				
@@ -132,16 +136,33 @@
 				
 
 				<div class="col-md-4">
-				<a href="hacer-evaluacion"> 
+				
 				<div class="img" style="background-image: url(images/4.jpg);height: 300px;    margin-bottom: 1em;">
-			    <h3 class="h3Menu">Realizar Auto Test</h3>
+			    <h3 class="h3Menu"><a href="hacer-evaluacion"  class="colorBlanco"> Realizar Auto Test	</a></h3>
 				</div>	
-				</a>
+			
 				</div>
 				
 				 <div class="col-md-2"></div>
 			</div>
+
+
+
+			<div class="row">
+			    <div class="col-md-2"></div>
+			    
+		
+				<div class="col-md-4">
+				<div class="img" style="background-image: url(images/lunch-4.jpg);height: 300px;    margin-bottom: 1em;">
+			    <h3 class="h3Menu"><a href="comparar-platos/<%= session.getAttribute("idUsuario") %>"  class="colorBlanco"> Comparar Platos</a></h3>
+				</div>	
+				</div>
+				 
+				 <div class="col-md-2"></div>
+			</div>
 			
+			
+					
 		</div>
 	</section>
 	

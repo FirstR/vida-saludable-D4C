@@ -26,8 +26,97 @@ public class Plato {
 	private String calorias; 
 	private String descripcion; 
 	private String dificultad; 
-  
-    @ManyToMany(mappedBy = "platos")
+
+	private String grasastrans; 
+	private String grasassaturadas; 
+	private String carbohidratoscomplejo; 
+	private String proteinasmagras; 
+	private String grasasinsaturadas; 
+	private String fibras; 
+	private String carbohidratosrefinado; 
+	private String proteinasnomagras; 
+
+	
+	
+    public String getGrasastrans() {
+		return grasastrans;
+	}
+
+
+	public void setGrasastrans(String grasastrans) {
+		this.grasastrans = grasastrans;
+	}
+
+
+	public String getGrasassaturadas() {
+		return grasassaturadas;
+	}
+
+
+	public void setGrasassaturadas(String grasassaturadas) {
+		this.grasassaturadas = grasassaturadas;
+	}
+
+
+	public String getCarbohidratoscomplejo() {
+		return carbohidratoscomplejo;
+	}
+
+
+	public void setCarbohidratoscomplejo(String carbohidratoscomplejo) {
+		this.carbohidratoscomplejo = carbohidratoscomplejo;
+	}
+
+
+	public String getProteinasmagras() {
+		return proteinasmagras;
+	}
+
+
+	public void setProteinasmagras(String proteinasmagras) {
+		this.proteinasmagras = proteinasmagras;
+	}
+
+
+	public String getGrasasinsaturadas() {
+		return grasasinsaturadas;
+	}
+
+
+	public void setGrasasinsaturadas(String grasasinsaturadas) {
+		this.grasasinsaturadas = grasasinsaturadas;
+	}
+
+
+	public String getFibras() {
+		return fibras;
+	}
+
+
+	public void setFibras(String fibras) {
+		this.fibras = fibras;
+	}
+
+
+	public String getCarbohidratosrefinado() {
+		return carbohidratosrefinado;
+	}
+
+
+	public void setCarbohidratosrefinado(String carbohidratosrefinado) {
+		this.carbohidratosrefinado = carbohidratosrefinado;
+	}
+
+
+	public String getProteinasnomagras() {
+		return proteinasnomagras;
+	}
+
+
+	public void setProteinasnomagras(String proteinasnomagras) {
+		this.proteinasnomagras = proteinasnomagras;
+	}
+	@ManyToMany(mappedBy = "platos")
     private Set<Ingrediente> ingredientes;
     
     

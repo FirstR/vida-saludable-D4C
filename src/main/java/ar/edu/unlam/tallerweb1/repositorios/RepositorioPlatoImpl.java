@@ -57,7 +57,7 @@ return query.list();
 		//  List<Plato>  platos = query.list(); 1.14
 		
  
- 	}
+ 	} 
 
 	@Override
 	public List<Plato> damePlatosPorIngredientes() {
@@ -69,6 +69,15 @@ return query.list();
 	public Plato damePlatoPorId(Long id) {
 		// TODO Auto-generated method stub
 		return sessionFactory.getCurrentSession().get(Plato.class, id);
+	}
+
+	@Override
+	public List<Plato> buscarPlatoPorNombre(String nombre) {
+		
+        final Session session = this.sessionFactory.getCurrentSession();
+        return session.createCriteria(Plato.class)
+                .add(Restrictions.like("nombre", "%"+nombre+"%"))
+                .list();
 	}
 	
 }
