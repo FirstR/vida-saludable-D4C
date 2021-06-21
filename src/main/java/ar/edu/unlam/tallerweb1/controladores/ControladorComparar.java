@@ -61,7 +61,7 @@ public class ControladorComparar{
        	}catch(UsuarioInvalido e){
 			 return new ModelAndView("redirect:/login");
        	}catch(PlatoVacio e){
-            model.put("msj","El codigo del plato no es correcto.");         
+            model.put("msj","No contamos con platos para comparar.");         
        	}
        	
 		return new ModelAndView("comparar-platos",model); 
@@ -72,12 +72,16 @@ public class ControladorComparar{
     @RequestMapping(path = "buscar-platos/{idUsuario}" , method = RequestMethod.GET)
 	public ModelAndView buscoPlatoPorNombre(@RequestParam("nombre") String nombre,@PathVariable Integer idUsuario) {
         ModelMap model = new ModelMap();
+      	try {
 		List<Plato>	platos = servicioPlato.buscarPlato(nombre);
 		
 		List<CompararPlato>	platosAgregados = servicioCompararPlato.damePlatos((long)idUsuario);
 		
 			 model.put("platosAgregados", platosAgregados);
 			 model.put("platos", platos);
+      	}catch(PlatoVacio e){
+            model.put("msj","No contamos con platos para comparar.");         
+       	}
 			 return new ModelAndView("comparar-platos",model); 
 	 
     }
@@ -85,24 +89,18 @@ public class ControladorComparar{
     
 	
     @RequestMapping(path = "agregar-a-la-comparacion/{idUsuario}" , method = RequestMethod.GET)
-	public ModelAndView agregarAlaComparacion(@RequestParam("platos[]") List<Integer> platos,@PathVariable Integer idUsuario) {
- 
-    	try {
-     		servicioCompararPlato.agregarPlatos(platos,idUsuario);
-    		ModelMap model = new ModelMap();
- 
+	public ModelAndView agregarAlaComparacion(@RequestParam("platos[]") Optional <List<Integer>> platos,@PathVariable Integer idUsuario) {
+		ModelMap model = new ModelMap();
+		
+		if(platos.isPresent()) {
+             servicioCompararPlato.agregarPlatos(platos.get(),idUsuario); 
 			 model.put("msj", "Platos Agregados Correctamente");
- 			 return new ModelAndView("comparar-platos",model);
-			 //platos vacios para agregar hacer expection
-			 }
-			 catch(IngredientesVacios e){
-				 ModelMap model = new ModelMap();
-				 model.put("msj","Debe seleccionar al menos un ingrediente");
-				 return new ModelAndView("redirect:/seleccionar-ingrediente",model);
-				 
-			 }
+    		  }else { 
+            model.put("msj","Debe Seleccionar un plato para comparar.");         
+    		}
 	 
-	 
+		 return new ModelAndView("comparar-platos",model);
+
 	 
  }
   
@@ -111,19 +109,19 @@ public class ControladorComparar{
     @RequestMapping(path = "ver-resultado-comparacion/{idUsuario}" , method = RequestMethod.GET)
 	public ModelAndView resultadoComparacion(@PathVariable Integer idUsuario) {
 	 try {
-		 List<CompararPlato>	resultadoBusqueda = servicioCompararPlato.damePlatos((long)idUsuario);
-		 ModelMap model = new ModelMap();
-		 
+	   	 	if (idUsuario!=0) {  
+	   		 List<CompararPlato>	resultadoBusqueda = servicioCompararPlato.damePlatos((long)idUsuario);
+	   		 ModelMap model = new ModelMap();  
 			 model.put("platos", resultadoBusqueda);
   			 return new ModelAndView("resultado-comparacion",model);
-			 //platos vacios para agregar hacer expection
-	 }
-	 catch(IngredientesVacios e){
-		 ModelMap model = new ModelMap();
-		 model.put("msj","Debe seleccionar al menos un ingrediente");
-		 return new ModelAndView("redirect:/seleccionar-ingrediente",model);
-		 
-	 }
+	   	 	} else {
+       		throw new UsuarioInvalido();
+	   	 	}  
+ 
+	 }catch(UsuarioInvalido e){
+		 return new ModelAndView("redirect:/login");
+     }
+ 
 	 
 	 
 	

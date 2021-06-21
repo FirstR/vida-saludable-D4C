@@ -27,6 +27,9 @@ public class ServicioCompararPlatoImpl implements ServicioCompararPlato {
  	public void agregarPlatos(List<Integer> platos, Integer idUsuario) {
 			
 		Integer cantidadplatos= platos.size();
+		if(cantidadplatos==0) {
+			throw new PlatoVacio();  
+		}
 		  for (int i=0;i<cantidadplatos;i++) {
 			Integer idPlato=  platos.get(i);
 			Plato plato = repositorioPlato.damePlatoPorId((long)idPlato);

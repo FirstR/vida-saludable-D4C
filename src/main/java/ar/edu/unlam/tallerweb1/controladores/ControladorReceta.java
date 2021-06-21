@@ -59,7 +59,7 @@ public class ControladorReceta {
 
           } 
           catch (PlatoVacio p){
-              model.put("msj","No contamos con platos para comparar.");
+              model.put("msj","El codigo del plato no es correcto.");
 
           }
           

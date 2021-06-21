@@ -42,7 +42,7 @@
 		
 	<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
 		<div class="container">
-			<a class="navbar-brand" href="index">Vida<span> Saludable</span></a>
+			<a class="navbar-brand" href="/proyecto-limpio-spring/index">Vida<span> Saludable</span></a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="oi oi-menu"></span> Menu
 			</button>
@@ -69,6 +69,10 @@
 		</div>
 	</section>
 	
+  <c:set  value='<%= session.getAttribute("idUsuario") %>' var="idUsuario"  /> 
+  <c:if test="${empty idUsuario}">
+  <c:set  value="0" var="idUsuario"  />
+  </c:if>		
 	
 	
 		<section class="ftco-section bg-light">
@@ -88,9 +92,9 @@
             </c:if>	
      
 			 <div class="col-md-8">     
-			 <form action="/proyecto-limpio-spring/buscar-platos/<%= session.getAttribute("idUsuario")  %>">
+			 <form action="/proyecto-limpio-spring/buscar-platos/${idUsuario}">
 			   <div class="col-md-6">
-			 <input type="text" name="nombre" class="form-control">
+			 <input type="text" name="nombre" placeholder="Ingrese el nombre del plato a buscar" class="form-control">
 			 </div>
 			 
 			  <div class="col-md-6">
@@ -100,7 +104,7 @@
 			 </div>
 			  <div class="col-md-4">
 			
-			  <a href="/proyecto-limpio-spring/ver-resultado-comparacion/<%= session.getAttribute("idUsuario")  %>"  class="btn btn-info"> Ver Comparacion</a>
+			  <a href="/proyecto-limpio-spring/ver-resultado-comparacion/${idUsuario}"  class="btn btn-info"> Ver Comparacion</a>
 			 </div>
 			
 			 </div>
@@ -113,7 +117,7 @@
 <section class="ftco-section ftco-no-pt ftco-no-pb" style="    margin-bottom: 1em;">
  <div class="container">
   <div class="row d-flex">
-<form action="/proyecto-limpio-spring/agregar-a-la-comparacion/<%= session.getAttribute("idUsuario")  %>">
+<form action="/proyecto-limpio-spring/agregar-a-la-comparacion/${idUsuario}">
 
 
  <c:forEach var="platos" items="${platos}">

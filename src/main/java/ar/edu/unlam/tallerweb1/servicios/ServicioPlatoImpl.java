@@ -21,7 +21,14 @@ public class ServicioPlatoImpl implements ServicioPlato {
 
 	@Override
 	public List<Plato> buscarPlato(String nombre) {
- 		return repositorioPlato.buscarPlatoPorNombre(nombre);
+ 		List<Plato> listadoPlatos=	 repositorioPlato.buscarPlatoPorNombre(nombre);
+
+		if(listadoPlatos.size()==0) {
+			throw new PlatoVacio();
+		}
+		
+ 		return listadoPlatos;
+ 		
 
 	}
 

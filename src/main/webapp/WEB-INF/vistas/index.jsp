@@ -33,7 +33,7 @@
 		
 	<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
 		<div class="container">
-			<a class="navbar-brand" href="index">Vida<span> Saludable</span></a>
+			<a class="navbar-brand" href="/proyecto-limpio-spring/index">Vida<span> Saludable</span></a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="oi oi-menu"></span> Menu
 			</button>
@@ -100,12 +100,10 @@
 			</style>
 			<div class="row">
 			    <div class="col-md-2"></div>
-	<c:set  value='<%= session.getAttribute("idUsuario") %>' var="idUsuario"  />
- 
- 
+  <c:set  value='<%= session.getAttribute("idUsuario") %>' var="idUsuario"  /> 
   <c:if test="${empty idUsuario}">
-   <c:set  value="0" var="idUsuario"  />
-   </c:if>	
+  <c:set  value="0" var="idUsuario"  />
+  </c:if>	
 				<div class="col-md-4">
 				
 				<div class="img" style="background-image: url(images/1.jpg);height: 300px; margin-bottom: 1em;">
