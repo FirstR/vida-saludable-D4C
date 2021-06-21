@@ -23,7 +23,7 @@ public class Plato {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id_plato;
 	private String nombre; 
-	private String calorias; 
+	private Integer calorias; 
 	private String descripcion; 
 	private String dificultad; 
 
@@ -120,12 +120,12 @@ public class Plato {
     private Set<Ingrediente> ingredientes;
     
     
-    public String getCalorias() {
+    public Integer getCalorias() {
 		return calorias;
 	}
 
 
-	public void setCalorias(String calorias) {
+	public void setCalorias(Integer  calorias) {
 		this.calorias = calorias;
 	}
 

@@ -49,8 +49,8 @@
 
 			<div class="collapse navbar-collapse" id="ftco-nav">
 				<ul class="navbar-nav ml-auto">
- 					<li class="nav-item"><a href="seleccionar-ingrediente" class="nav-link">¿Qué puedo cocinar?</a></li> 
- 					<li class="nav-item"><a href="hacer-evaluacion" class="nav-link">¿Estoy comiendo sano?</a></li> 
+ 					<li class="nav-item"><a href="/proyecto-limpio-spring/seleccionar-ingrediente" class="nav-link">¿Qué puedo cocinar?</a></li> 
+ 					<li class="nav-item"><a href="/proyecto-limpio-spring/hacer-evaluacion" class="nav-link">¿Estoy comiendo sano?</a></li> 
 				</ul>
 			</div>
 		</div>

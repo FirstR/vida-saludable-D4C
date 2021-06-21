@@ -116,5 +116,12 @@ public class Usuario {
 		this.email = email;
 		this.password = password;
 	}
+ 	
+    public Usuario (Long id, String compCorporal){
+		this.id = id;
+		this.compCorporal = compCorporal;
+ 	}
 
+    
+    
 }

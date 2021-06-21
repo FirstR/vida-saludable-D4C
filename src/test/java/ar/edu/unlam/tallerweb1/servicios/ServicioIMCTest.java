@@ -1,12 +1,18 @@
 package ar.edu.unlam.tallerweb1.servicios;
 
-import ar.edu.unlam.tallerweb1.servicios.PesoInvalido;
+import ar.edu.unlam.tallerweb1.servicios.PesoInvalido; 
 import ar.edu.unlam.tallerweb1.modelo.DatosIMC;
+import ar.edu.unlam.tallerweb1.repositorios.RepositorioDiagnostico;
+import ar.edu.unlam.tallerweb1.repositorios.RepositorioUsuario;
+
 //import org.junit.jupiter.api.Assertions;
 //import org.junit.jupiter.api.Test;
 import org.junit.Test;
 import static org.assertj.core.api.Assertions.*;
 import static org.junit.Assert.assertThat;
+import static org.mockito.Mockito.mock;
+
+import org.junit.Before;
 
 public class ServicioIMCTest {
 
@@ -14,7 +20,16 @@ public class ServicioIMCTest {
     private Double altura;
     private Double peso;
     private DatosIMC datosIMC;
+    private RepositorioUsuario repositorioUsuario;
+    
+    @Before
+    public void init() {
+    	repositorioUsuario = mock (RepositorioUsuario.class);
+    	servicio= new ServicioIMCImpl(repositorioUsuario);
+    }
 
+    
+    
     @Test
     public void siLosDatosSonCorrectosDeberiaCalcular(){
 

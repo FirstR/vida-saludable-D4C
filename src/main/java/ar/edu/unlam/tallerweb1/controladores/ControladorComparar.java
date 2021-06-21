@@ -48,7 +48,7 @@ public class ControladorComparar{
         ModelMap model = new ModelMap();
        	try {
 
-       	 if (idUsuario!=0) { 
+       	 if (idUsuario!=0 ) { 
 	 		List<Plato>	platos = servicioPlato.damePlatos();
 			List<CompararPlato>	platosAgregados = servicioCompararPlato.damePlatos((long)idUsuario); 
 			model.put("platosAgregados", platosAgregados);

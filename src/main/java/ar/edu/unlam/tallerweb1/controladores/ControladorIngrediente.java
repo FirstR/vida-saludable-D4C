@@ -1,5 +1,6 @@
 package ar.edu.unlam.tallerweb1.controladores;
 
+import ar.edu.unlam.tallerweb1.modelo.DatosIMC;
 import ar.edu.unlam.tallerweb1.modelo.Ingrediente;
 import ar.edu.unlam.tallerweb1.servicios.ServicioIngrediente;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,7 +35,8 @@ public class ControladorIngrediente {
       @RequestMapping(path = "seleccionar-ingrediente")
     public ModelAndView seleccionDeIngredientes(@RequestParam(value = "msj", required = false) String msj) {
 
-
+ 
+    	  	 
         ModelMap model = new ModelMap();
         Integer verduras = 1;
         Integer carnes = 2;

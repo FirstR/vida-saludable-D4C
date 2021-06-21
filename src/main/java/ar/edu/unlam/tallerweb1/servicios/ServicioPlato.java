@@ -17,7 +17,8 @@ public interface ServicioPlato {
 
 	List<Plato> damePlatos();
 
-	List<Plato> buscarPlatoPorIngredientes(List<Integer> ingredientes);
+	List<Plato> buscarPlatoPorIngredientes(List<Integer> ingredientes, Integer idUsuario);
+	List<Plato> buscarPorCalorias(Integer calorias) ;
 
  	
 	

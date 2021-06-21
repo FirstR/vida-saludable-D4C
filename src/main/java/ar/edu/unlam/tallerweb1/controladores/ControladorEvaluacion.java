@@ -9,6 +9,7 @@ import ar.edu.unlam.tallerweb1.servicios.IngredientesVacios;
 import ar.edu.unlam.tallerweb1.servicios.PlatoVacio;
 import ar.edu.unlam.tallerweb1.servicios.PreguntasVacias;
 import ar.edu.unlam.tallerweb1.servicios.ServicioEvaluacion;
+import ar.edu.unlam.tallerweb1.servicios.ServicioPlato;
 import ar.edu.unlam.tallerweb1.servicios.ServicioDiagnostico;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -32,10 +33,12 @@ public class ControladorEvaluacion{
 
 	private ServicioEvaluacion servicioEvaluacion;
 	private ServicioDiagnostico servicioDiagnostico;
+	private ServicioPlato servicioPlato;
  
 
     @Autowired
-    public ControladorEvaluacion(ServicioEvaluacion servicioEvaluacion,ServicioDiagnostico servicioDiagnostico){
+    public ControladorEvaluacion(ServicioPlato servicioPlato,ServicioEvaluacion servicioEvaluacion,ServicioDiagnostico servicioDiagnostico){
+        this.servicioPlato = servicioPlato;
         this.servicioEvaluacion = servicioEvaluacion;
         this.servicioDiagnostico = servicioDiagnostico;
     }
@@ -69,6 +72,9 @@ public class ControladorEvaluacion{
           //SERVICIO TIENE QUE DISPARAR UNA EXEPCION CUANDO NO COMPLETA TODOS LOS CAMPOS
           try {
         	  Diagnostico resultadoDiagnostico=  servicioDiagnostico.buscarDiagnostico(pregunta1,pregunta2,pregunta3,pregunta4,pregunta5,pregunta6,pregunta7,pregunta8,pregunta9,pregunta10,pregunta11,pregunta12); 
+        	  //busco platos segun el consejo del diagnostico
+        	  List<Plato> platosRecomendados=  servicioPlato.buscarPorCalorias(resultadoDiagnostico.getConsejocalorias());
+              model.put("platosRecomendados",platosRecomendados);
                model.put("resultado",resultadoDiagnostico);
               return new ModelAndView("ver-resultado", model);
 

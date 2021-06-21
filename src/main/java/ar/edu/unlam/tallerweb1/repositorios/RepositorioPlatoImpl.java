@@ -32,7 +32,7 @@ public class RepositorioPlatoImpl implements RepositorioPlato{
 	}
 
 	@Override
-	public List<Plato> damePlatosPorIngredientes(List<Integer> ingredientes) {
+	public List<Plato> damePlatosPorIngredientes(List<Integer> ingredientes,String ordenar) {
 		String where ="";
 		Integer cantidadIngrediente= ingredientes.size();
 		  for (int i=0;i<cantidadIngrediente;i++) {
@@ -50,10 +50,13 @@ public class RepositorioPlatoImpl implements RepositorioPlato{
 				+ "where"
 				+ where + ""
 			    + "GROUP by  (platos.id_plato)"
-			    + "HAVING COUNT(platos.id_plato)="+cantidadIngrediente+"")
+			    + "HAVING COUNT(platos.id_plato)="+cantidadIngrediente+""
+			    + " ORDER BY platos.calorias "+ordenar+""
+			    )
 				;
-			query.setResultTransformer(Transformers.ALIAS_TO_ENTITY_MAP);
-return query.list();
+		
+ 			query.setResultTransformer(Transformers.ALIAS_TO_ENTITY_MAP);
+ return query.list();
 		//  List<Plato>  platos = query.list(); 1.14
 		
  
@@ -78,6 +81,15 @@ return query.list();
         return session.createCriteria(Plato.class)
                 .add(Restrictions.like("nombre", "%"+nombre+"%"))
                 .list();
+	}
+
+	@Override
+	public List<Plato> buscarPlatoPorCalorias(Integer calorias) {
+		//
+ 	       final Session session = this.sessionFactory.getCurrentSession();
+	        return session.createCriteria(Plato.class)
+	                .add(Restrictions.lt("calorias", calorias))
+	                .list();
 	}
 	
 }

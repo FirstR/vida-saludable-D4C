@@ -1,8 +1,15 @@
 package ar.edu.unlam.tallerweb1.controladores;
+import ar.edu.unlam.tallerweb1.modelo.CompararPlato;
 import ar.edu.unlam.tallerweb1.modelo.DatosIMC;
+import ar.edu.unlam.tallerweb1.modelo.Plato;
 import ar.edu.unlam.tallerweb1.servicios.AlturaInvalida;
 import ar.edu.unlam.tallerweb1.servicios.PesoInvalido;
+import ar.edu.unlam.tallerweb1.servicios.PlatoVacio;
 import ar.edu.unlam.tallerweb1.servicios.ServicioCalcularIMC;
+import ar.edu.unlam.tallerweb1.servicios.UsuarioInvalido;
+
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -22,13 +29,21 @@ public class ControladorIMC {
         this.servicio = servicio;
     }
 
+    
+     
+   	
     @RequestMapping("calcular/{idUsuario}")
     public ModelAndView irACalcularIMC(@PathVariable Integer idUsuario) {
 
+    	 if (idUsuario!=0 ) { 
         ModelMap modelo = new ModelMap();
         DatosIMC datos = new DatosIMC();
         modelo.put("datosIMC", datos);
         return new ModelAndView("calcularIMC", modelo);
+    	 }else {
+        return new ModelAndView("redirect:/login");
+
+    	 }
     }
 
     @RequestMapping(path = "calcularImcCompleto/{idUsuario}", method = RequestMethod.POST)

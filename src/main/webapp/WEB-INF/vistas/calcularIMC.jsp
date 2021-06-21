@@ -19,19 +19,24 @@
 	<link rel="stylesheet" href="/proyecto-limpio-spring/css/flaticon.css">
 	<link rel="stylesheet" href="/proyecto-limpio-spring/css/style.css?v5.3">
 </head>
+ 
 
-<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
-    <div class="container">
-        <a class="navbar-brand" href="index.html">Vida Saludable <span>Calcular indice de masa corporal (IMC)</span></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="oi oi-menu"></span>
-        </button>
+	<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+		<div class="container">
+			<a class="navbar-brand" href="/proyecto-limpio-spring/index">Vida<span> Saludable</span></a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="oi oi-menu"></span> Menu
+			</button>
 
-        <div class="collapse navbar-collapse" id="ftco-nav">
-        </div>
-    </div>
-</nav>
-
+			<div class="collapse navbar-collapse" id="ftco-nav">
+				<ul class="navbar-nav ml-auto">
+ 					<li class="nav-item"><a href="/proyecto-limpio-spring/seleccionar-ingrediente" class="nav-link">¿Qué puedo cocinar?</a></li> 
+ 					<li class="nav-item"><a href="/proyecto-limpio-spring/hacer-evaluacion" class="nav-link">¿Estoy comiendo sano?</a></li> 
+				</ul>
+			</div>
+		</div>
+	</nav>
+	
 
 
 	<section class="hero-wrap hero-wrap-2" style="background-image: url('/proyecto-limpio-spring/images/bg_5.jpg');" data-stellar-background-ratio="0.5">
@@ -40,7 +45,7 @@
 			<div class="row no-gutters slider-text justify-content-center" style="    margin-top: 9em;">
 				<div class="col-md-9 ftco-animate text-center mb-5">
 					<h1 class="mb-2 bread"> Vida Saludable</h1>
-					<p class="breadcrumbs"><span class="mr-2"><a href="">Calcular IMC </a></span>  </p>
+					<p class="breadcrumbs"><span class="mr-2"><a href="">Calcular indice de masa corporal (IMC) </a></span>  </p>
 				</div>
 			</div>
 		</div>
