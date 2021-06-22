@@ -131,6 +131,7 @@
 			    
 		
 				<div class="col-md-4">
+				<a href="infoEjercicio"> 
 				<div class="img" style="background-image: url(images/3.jpg);height: 300px;    margin-bottom: 1em;">
 			    <h3 class="h3Menu">Listado de Ejercicios</h3>
 				</div>	

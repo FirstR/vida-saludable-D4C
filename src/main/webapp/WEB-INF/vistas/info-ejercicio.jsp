@@ -40,11 +40,9 @@
 		      </div>
 		      <div class="modal-body">
 		        <form:form action="validarInfoEjercicio" method="GET" modelAttribute="ejercicio">
-		          <div class="dropdown">
-					  <!--<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
-					   <span> Seleccione duracion </span>
-					   <br>
-					  <!--</button>-->
+		          <div class="form-group">
+					    <label for="altura" class="col-form-label">Seleccione duracion</label>
+
 					  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
 					   <form:select path="duracion" id="duracion">			<!--Obtener informacion de la base-->    
 					        <form:option value="3 meses" label="3 meses"/>  
@@ -53,11 +51,9 @@
 				        </form:select>
 					  </div>
 				 </div>
-		         <br/><br/>
-		         <div class="dropdown">
-					 <!--<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
-					    Seleccione dificultad
-					  <!--</button>-->
+		         <div class="form-group">
+					    <label for="altura" class="col-form-label">Seleccione dificultad</label>
+
 					  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
 					  	<form:select path="dificultad" id="dificultad">  
 					        <form:option value="Novato" label="Novato"/>  
@@ -66,10 +62,8 @@
 				        </form:select> 
 					  </div>
 				 </div>
-				 <br/><br/>
 		          <div class="form-group">
 		            <label for="altura" class="col-form-label">Cual es su estado fisico actual?</label>
-		            <br>
 		            	<form:select path="estadoFisico" id="estado">  
 					        <form:option value="Excelente estado fisico" label="Excelente estado fisico"/>  
 					        <form:option value="Hago actividad fisica casualmente" label="Hago actividad fisica casualmente"/>  
@@ -86,15 +80,14 @@
             		<br>
        			 </c:if>	
 		        
-		      </div>
-		      <div class="modal-footer">
-		      <button type="submit" class="btn btn-primary">Guardar</button>
-		        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-		        
-		      </div>
-		      </form:form>
-		    </div>
-		
+		      
+			      <div class="modal-footer">
+				      	<button type="submit" class="btn btn-primary">Guardar</button>
+				        <button type="button" class="btn btn-secondary" data-dismiss="modal"><a href="index"/>Volver</button>
+			        
+			      </div>
+		      	</form:form>
+				</div>
 		<!-- Placed at the end of the document so the pages load faster -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js" ></script>
 		<script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
