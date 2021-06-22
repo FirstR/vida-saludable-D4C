@@ -1,12 +1,13 @@
 package ar.edu.unlam.tallerweb1.controladores;
 
-import ar.edu.unlam.tallerweb1.modelo.DatosDeRegistro;
+import ar.edu.unlam.tallerweb1.modelo.DatosDeRegistro; 
 import ar.edu.unlam.tallerweb1.modelo.Usuario;
 import ar.edu.unlam.tallerweb1.servicios.ServicioRegistrarse;
 import ar.edu.unlam.tallerweb1.servicios.ServicioRegistrarseImpl;
 import ar.edu.unlam.tallerweb1.servicios.UsuarioExistente;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+
+import org.junit.Before;
+import org.junit.Test;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.servlet.ModelAndView;
 import static org.assertj.core.api.Assertions.*;
@@ -22,7 +23,7 @@ public class ControladorRegistrarseTest {
     private ServicioRegistrarse servicio;
     private ModelAndView mav;
 
-    @BeforeEach
+    @Before
     public void init(){
         servicio = mock(ServicioRegistrarse.class);
         controlador = new ControladorRegistrarse(servicio);

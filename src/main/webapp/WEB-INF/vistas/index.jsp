@@ -33,7 +33,7 @@
 		
 	<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
 		<div class="container">
-			<a class="navbar-brand" href="index">Vida<span> Saludable</span></a>
+			<a class="navbar-brand" href="/proyecto-limpio-spring/index">Vida<span> Saludable</span></a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="oi oi-menu"></span> Menu
 			</button>
@@ -94,25 +94,31 @@
     position: absolute;
         width: 92%;
     }
+    .colorBlanco{
+    color:white;
+    }
 			</style>
 			<div class="row">
 			    <div class="col-md-2"></div>
-			    
-		
+  <c:set  value='<%= session.getAttribute("idUsuario") %>' var="idUsuario"  /> 
+  <c:if test="${empty idUsuario}">
+  <c:set  value="0" var="idUsuario"  />
+  </c:if>	
 				<div class="col-md-4">
-				<a href=""> 
-				<div class="img" style="background-image: url(images/1.jpg);height: 300px;    margin-bottom: 1em;">
-			    <h3 class="h3Menu">Indice Masa Moscular</h3>
-			    </a>
+				
+				<div class="img" style="background-image: url(images/1.jpg);height: 300px; margin-bottom: 1em;">
+			    <h3 class="h3Menu"><a href="calcular/${idUsuario}" class="colorBlanco"> Indice Masa Moscular</a></h3>
+			    </div>
 				</div>	
-				</div>
+				
+				 
 				
 
 				<div class="col-md-4">
-				<a href="seleccionar-ingrediente"> 
+				
 				<div class="img" style="background-image: url(images/2.jpg);height: 300px;    margin-bottom: 1em;">
-			    <h3 class="h3Menu">¿Qué puedo cocinar?</h3>
-			    </a>
+			    <h3 class="h3Menu"><a href="seleccionar-ingrediente" class="colorBlanco"> ¿Qué puedo cocinar?</a></h3>
+			 
 				</div>	
 				</div>
 				
@@ -133,16 +139,33 @@
 				
 
 				<div class="col-md-4">
-				<a href="hacer-evaluacion"> 
+				
 				<div class="img" style="background-image: url(images/4.jpg);height: 300px;    margin-bottom: 1em;">
-			    <h3 class="h3Menu">Realizar Auto Test</h3>
+			    <h3 class="h3Menu"><a href="hacer-evaluacion"  class="colorBlanco"> Realizar Auto Test	</a></h3>
 				</div>	
-				</a>
+			
 				</div>
 				
 				 <div class="col-md-2"></div>
 			</div>
+
+
+
+			<div class="row">
+			    <div class="col-md-2"></div>
+			    
+		
+				<div class="col-md-4">
+				<div class="img" style="background-image: url(images/lunch-4.jpg);height: 300px;    margin-bottom: 1em;">
+			    <h3 class="h3Menu"><a href="comparar-platos/${idUsuario}"  class="colorBlanco"> Comparar Platos</a></h3>
+				</div>	
+				</div>
+				 
+				 <div class="col-md-2"></div>
+			</div>
 			
+			
+					
 		</div>
 	</section>
 	

@@ -33,15 +33,15 @@
 		
 	<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
 		<div class="container">
-			<a class="navbar-brand" href="index">Vida<span> Saludable</span></a>
+			<a class="navbar-brand" href="/proyecto-limpio-spring/index">Vida<span> Saludable</span></a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="oi oi-menu"></span> Menu
 			</button>
 
 			<div class="collapse navbar-collapse" id="ftco-nav">
 				<ul class="navbar-nav ml-auto">
- 					<li class="nav-item"><a href="seleccionar-ingrediente" class="nav-link">¿Qué puedo cocinar?</a></li> 
- 					<li class="nav-item"><a href="hacer-evaluacion" class="nav-link">¿Estoy comiendo sano?</a></li> 
+ 					<li class="nav-item"><a href="/proyecto-limpio-spring/seleccionar-ingrediente" class="nav-link">¿Qué puedo cocinar?</a></li> 
+ 					<li class="nav-item"><a href="/proyecto-limpio-spring/hacer-evaluacion" class="nav-link">¿Estoy comiendo sano?</a></li> 
 				</ul>
 			</div>
 		</div>
@@ -95,7 +95,44 @@ ${resultado.descripcion}
       class="btn btn-primary"> Volver a realizar el test</a></p></div>
       
         <div class="col-md-3"></div>
- 				
+ 			
+ 			   <div class="col-md-12" style=" margin-top: 20px;    text-align: center; ">
+ 			
+ 								<h2 class="mb-4">Platos Recomendados</h2>
+ 			</div>
+ 			
+ 			
+ <c:forEach var="platos" items="${platosRecomendados}">
+
+
+   <div class="col-md-3 ftco-animate makereservation p-4 p-md-5">
+     <div class="heading-section ftco-animate mb-5">
+
+ <h3 class="mb-4">${platos.nombre} </h3> 
+
+<img src="/proyecto-limpio-spring/images/breakfast-${platos.id_plato}.jpg" class="imagenPlato" style="height: 200px;">
+
+  
+  <h3 class="mb-4"><label>Calorias:</label><span class="dato">${platos.calorias}</span></h3> 
+  <h3 class="mb-4"><label>Grasas Trans:</label><span class="dato">${platos.grasastrans}</span></h3> 
+  <h3 class="mb-4"><label>Grasas Saturadas:</label><span class="dato">${platos.grasassaturadas}</span></h3> 
+  <h3 class="mb-4"><label>Carbohidratos Complejos:</label><span class="dato">${platos.carbohidratoscomplejo}</span></h3> 
+  <h3 class="mb-4"><label>Proteinas Magras</label><span class="dato">${platos.proteinasmagras}</span></h3> 
+  <h3 class="mb-4"><label>Grasas Insaturadas</label><span class="dato">${platos.grasasinsaturadas}</span></h3> 
+  <h3 class="mb-4"><label>Fibras</label><span class="dato">${platos.fibras}</span></h3> 
+  <h3 class="mb-4"><label>Carbohidratos Refinados:</label><span class="dato">${platos.carbohidratosrefinado}</span></h3> 
+  <h3 class="mb-4"><label>Proteinas No Magras:</label><span class="dato">${platos.proteinasnomagras}</span></h3>  
+  
+ 
+     
+ 
+    </div>
+  </div>
+  
+   
+</c:forEach> 
+
+	
 			</div>
 		</div>
 	</section>

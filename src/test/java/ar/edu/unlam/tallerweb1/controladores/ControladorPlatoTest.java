@@ -44,7 +44,8 @@ public class ControladorPlatoTest  {
     private ControladorPlato controladorPlato ;  
     private ModelAndView mav; 
     private ServicioPlato servicioPlato ;  
-     
+    private Integer idUsuario = 1;
+
    @Before
    public void init() {
 	   servicioPlato = mock(ServicioPlato.class);
@@ -70,9 +71,9 @@ public class ControladorPlatoTest  {
  		List<Plato> listaDeplatos = new LinkedList<>();
  		listaDeplatos.add(new Plato("Chipa"));
  		
-		when(servicioPlato.buscarPlatoPorIngredientes(ingredientes)).thenReturn(listaDeplatos);
+		when(servicioPlato.buscarPlatoPorIngredientes(ingredientes,idUsuario)).thenReturn(listaDeplatos);
 
-    	whenSepuedeBuscarPlato(ingredientes);
+    	whenSepuedeBuscarPlato(ingredientes,idUsuario);
     	thanObtengoPlato();
     }
 
@@ -83,9 +84,9 @@ public class ControladorPlatoTest  {
 	}
 
 
-	private void whenSepuedeBuscarPlato(List<Integer> ingredientes) {
+	private void whenSepuedeBuscarPlato(List<Integer> ingredientes,Integer idUsuario) {
 		// TODO Auto-generated method stub cambiar controladorIngrediente a controladorPlato ante ultimo video 36.18 https://ingunlamedu.sharepoint.com/sites/TallerWeb12/Documentos%20compartidos/Forms/AllItems.aspx?id=%2Fsites%2FTallerWeb12%2FDocumentos%20compartidos%2FReuniones%20TN%2FRecordings%2FClase%2013May21%20%2D%20Kata%20punta%20a%20punta%2D20210513%5F191310%2DGrabaci%C3%B3n%20de%20la%20reuni%C3%B3n%2Emp4&parent=%2Fsites%2FTallerWeb12%2FDocumentos%20compartidos%2FReuniones%20TN%2FRecordings
-	mav=controladorPlato.buscoPlato(ingredientes);
+	mav=controladorPlato.buscoPlato(ingredientes,idUsuario);
 	}
 
 
@@ -109,10 +110,10 @@ public class ControladorPlatoTest  {
 	
      	doThrow(IngredientesVacios.class)
      	.when(servicioPlato)
-     	.buscarPlatoPorIngredientes(ingredientes);
+     	.buscarPlatoPorIngredientes(ingredientes,idUsuario);
      	
     	//teniendo un ingrediente-> como obtengo este ingrediente ? lo obtengo por que me lo da una vista
-    	whenSepuedeBuscarPlato(ingredientes);
+    	whenSepuedeBuscarPlato(ingredientes,idUsuario);
     	
     	thanVuelveAseleccionarIngredientes();
     }
@@ -142,9 +143,9 @@ public class ControladorPlatoTest  {
      	
  		List<Plato> listaDeplatos = new LinkedList<>();
   		
-		when(servicioPlato.buscarPlatoPorIngredientes(ingredientes)).thenReturn(listaDeplatos);
+		when(servicioPlato.buscarPlatoPorIngredientes(ingredientes,idUsuario)).thenReturn(listaDeplatos);
 
-    	whenSepuedeBuscarPlato(ingredientes);
+    	whenSepuedeBuscarPlato(ingredientes,idUsuario);
     	
     	thanNoEncontrePlatos();
     }

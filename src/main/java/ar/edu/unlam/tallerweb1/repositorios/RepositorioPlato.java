@@ -12,7 +12,10 @@ import java.util.List;
 
 	List<Plato> damePlatosPorIngredientes();
 
-	List<Plato> damePlatosPorIngredientes(List<Integer> ingredientes); 
- 
+	List<Plato> damePlatosPorIngredientes(List<Integer> ingredientes, String ordenar);
+
+	List<Plato> buscarPlatoPorNombre(String nombre); 
+	List<Plato> buscarPlatoPorCalorias(Integer calorias); 
+	
  	
- }
+ } 

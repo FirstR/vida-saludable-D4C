@@ -6,23 +6,19 @@
 	<head>
 	
 	
-	<!-- Bootstrap core CSS -->
-	    <link href="css/bootstrap.min.css" rel="stylesheet" >
-	    <!-- Bootstrap theme -->
-	    <link href="css/bootstrap-theme.min.css" rel="stylesheet">
-	    
-	 <link rel="stylesheet" href="css/animate.css">
-	
-	<link rel="stylesheet" href="css/owl.carousel.min.css">
-	<link rel="stylesheet" href="css/owl.theme.default.min.css">
-	<link rel="stylesheet" href="css/magnific-popup.css">
+	<link href="/proyecto-limpio-spring/css/bootstrap.min.css" rel="stylesheet" >
+	<link href="/proyecto-limpio-spring/css/bootstrap-theme.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="/proyecto-limpio-spring/css/animate.css">
+	<link rel="stylesheet" href="/proyecto-limpio-spring/css/owl.carousel.min.css">
+	<link rel="stylesheet" href="/proyecto-limpio-spring/css/owl.theme.default.min.css">
+	<link rel="stylesheet" href="/proyecto-limpio-spring/css/magnific-popup.css">
 
-	<link rel="stylesheet" href="css/bootstrap-datepicker.css">
-	<link rel="stylesheet" href="css/jquery.timepicker.css">
+	<link rel="stylesheet" href="/proyecto-limpio-spring/css/bootstrap-datepicker.css">
+	<link rel="stylesheet" href="/proyecto-limpio-spring/css/jquery.timepicker.css">
 
 	
-	<link rel="stylesheet" href="css/flaticon.css">
-	<link rel="stylesheet" href="css/style.css?v5.3">
+	<link rel="stylesheet" href="/proyecto-limpio-spring/css/flaticon.css">
+	<link rel="stylesheet" href="/proyecto-limpio-spring/css/style.css?v5.3">
 	<title>Vida Saludable</title>
 		 
  <script type='text/javascript'>
@@ -111,19 +107,27 @@
 	<body>
 	
 	 
+	 
+  <c:set  value='<%= session.getAttribute("idUsuario") %>' var="idUsuario"  /> 
+  <c:if test="${empty idUsuario}">
+  <c:set  value="0" var="idUsuario"  />
+  </c:if>		
+	
+	
+	
 
 		
 	<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
 		<div class="container">
-			<a class="navbar-brand" href="index">Vida<span> Saludable</span></a>
+			<a class="navbar-brand" href="/proyecto-limpio-spring/index">Vida<span> Saludable</span></a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="oi oi-menu"></span> Menu
 			</button>
 
 			<div class="collapse navbar-collapse" id="ftco-nav">
 				<ul class="navbar-nav ml-auto">
- 					<li class="nav-item"><a href="seleccionar-ingrediente" class="nav-link">¿Qué puedo cocinar?</a></li> 
- 					<li class="nav-item"><a href="hacer-evaluacion" class="nav-link">¿Estoy comiendo sano?</a></li> 
+ 					<li class="nav-item"><a href="/proyecto-limpio-spring/seleccionar-ingrediente" class="nav-link">¿Qué puedo cocinar?</a></li> 
+ 					<li class="nav-item"><a href="/proyecto-limpio-spring/hacer-evaluacion" class="nav-link">¿Estoy comiendo sano?</a></li> 
 				</ul>
 			</div>
 		</div>
@@ -169,6 +173,7 @@
             
             
 <form class="" name="prueba"  action="busco-plato"  onsubmit="return validarForm();" style="width: 100%;">
+ <input type="hidden" name="idUsuario" value="${idUsuario}">
  
 <select name="ingredientes[]" id="ingredientes" multiple style="display:none"></select>
  

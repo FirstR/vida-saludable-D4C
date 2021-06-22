@@ -1,6 +1,6 @@
 package ar.edu.unlam.tallerweb1.controladores;
  
-import ar.edu.unlam.tallerweb1.SpringTest;      
+import ar.edu.unlam.tallerweb1.SpringTest;       
 //no hace falta extends SpringTest
 import ar.edu.unlam.tallerweb1.modelo.Diagnostico;
 import ar.edu.unlam.tallerweb1.modelo.Evaluacion;
@@ -9,6 +9,7 @@ import ar.edu.unlam.tallerweb1.servicios.FaltanRespuestas;
 import ar.edu.unlam.tallerweb1.servicios.PreguntasVacias;
 import ar.edu.unlam.tallerweb1.servicios.ServicioDiagnostico;
 import ar.edu.unlam.tallerweb1.servicios.ServicioEvaluacion;
+import ar.edu.unlam.tallerweb1.servicios.ServicioPlato;
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.stereotype.Controller;
@@ -37,13 +38,15 @@ public class ControladorEvaluacionTest {
     private ModelAndView mav; 
     private ServicioEvaluacion servicioEvaluacion;  
 	private ServicioDiagnostico servicioDiagnostico;
+	private ServicioPlato servicioPlato;
 
    @Before
    public void init() {
 	   servicioEvaluacion = mock(ServicioEvaluacion.class);
 	   servicioDiagnostico = mock(ServicioDiagnostico.class);
+	   servicioPlato = mock(ServicioPlato.class);
 	   
-	   controladorEvaluacion = new ControladorEvaluacion(servicioEvaluacion,servicioDiagnostico);
+	   controladorEvaluacion = new ControladorEvaluacion(servicioPlato,servicioEvaluacion,servicioDiagnostico);
    }
    
  

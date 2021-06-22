@@ -35,8 +35,15 @@ public class Diagnostico {
 	private Integer respuesta_b; 
 	private Integer respuesta_c; 
 	private String respuestas; 
+	private Integer consejocalorias; 
 
 	
+	public Integer getConsejocalorias() {
+		return consejocalorias;
+	}
+	public void setConsejocalorias(Integer consejocalorias) {
+		this.consejocalorias = consejocalorias;
+	}
 	public String getRespuestas() {
 		return respuestas;
 	}

@@ -37,10 +37,12 @@ public class ControladorPlato {
 	
 	
     @RequestMapping(path = "busco-plato" , method = RequestMethod.GET)
-	public ModelAndView buscoPlato(@RequestParam("ingredientes[]") List<Integer> ingredientes) {
+	public ModelAndView buscoPlato(@RequestParam("ingredientes[]") List<Integer> ingredientes, Integer idUsuario) {
 	//public void foo(@RequestParam("number[]") List<String> to)	
-	 try {
-		List<Plato>	resultadoBusqueda = servicioPlato.buscarPlatoPorIngredientes(ingredientes);
+   	 if (idUsuario!=0 ) {  
+      	 
+    	try {
+		List<Plato>	resultadoBusqueda = servicioPlato.buscarPlatoPorIngredientes(ingredientes,idUsuario);
 		 ModelMap model = new ModelMap();
 
 		if(resultadoBusqueda.size()>0) {
@@ -59,6 +61,11 @@ public class ControladorPlato {
 		 return new ModelAndView("redirect:/seleccionar-ingrediente",model);
 		 
 	 }
+    	
+   	 }else {
+		 return new ModelAndView("redirect:/login");
+
+   	 }
 	 
 	 
 	 
